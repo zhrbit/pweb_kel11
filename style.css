@@ -67,10 +67,10 @@ body {
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 0;
   transform: translatey(-50px);
-  border: 3px solid #333344;
+  border: 3px solid hwb(240 3% 75%);
   padding: 10px 20px;
   background-color: transparent;
-  color: #333344;
+  color: hwb(240 3% 75%);
   font-size: 30px;
 }
 #container #instructions {
