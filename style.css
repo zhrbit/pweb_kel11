@@ -20,7 +20,7 @@ body {
   text-align: center;
   font-size: 10vh;
   transition: transform 0.5s ease;
-  color: #143f9c;
+  color: #1e56cf;
   transform: translatey(-200px) scale(1);
 }
 #container #game {
