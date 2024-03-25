@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa");
+
 html,
 body {
   margin: 0;
@@ -7,6 +8,8 @@ body {
   width: 100%;
   position: relative;
   font-family: "Comfortaa", cursive;
+  background-color: rgb(202, 231, 255); /* Ganti dengan warna latar belakang yang diinginkan */
+
 }
 
 #container {

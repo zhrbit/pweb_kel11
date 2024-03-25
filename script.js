@@ -54,6 +54,7 @@ class Stage {
         this.camera.updateProjectionMatrix();
     }
 }
+
 class Block {
     constructor(block) {
         // set size and position
@@ -162,6 +163,7 @@ class Block {
         }
     }
 }
+
 class Game {
     constructor() {
         this.STATES = {
@@ -201,6 +203,8 @@ class Game {
             // ☝️ this triggers after click on android so you
             // insta-lose, will figure it out later.
         });
+        this.startTime = null; // Tambahkan properti startTime
+        this.timeContainer = document.getElementById('time');
     }
     updateState(newState) {
         for (let key in this.STATES)
@@ -224,8 +228,16 @@ class Game {
     startGame() {
         if (this.state != this.STATES.PLAYING) {
             this.scoreContainer.innerHTML = '0';
+            this.startTime = new Date(); // Set waktu mulai
+            this.updateTime(); // Perbarui tampilan waktu
             this.updateState(this.STATES.PLAYING);
             this.addBlock();
+        }
+    }
+    updateTime() {
+        if (this.startTime) {
+            const elapsedTime = Math.floor((new Date() - this.startTime) / 1000); // Hitung waktu yang telah berlalu dalam detik
+            this.timeContainer.innerHTML = `Time: ${elapsedTime}s`; // Perbarui tampilan waktu
         }
     }
     restartGame() {
@@ -296,3 +308,7 @@ class Game {
     }
 }
 let game = new Game();
+
+setInterval(() => {
+    game.updateTime();
+}, 1000);
